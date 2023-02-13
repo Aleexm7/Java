@@ -1,6 +1,6 @@
 package ejercicios;
 
-import java.math.*;
+
 
 public class Ejercicio8 {
 
