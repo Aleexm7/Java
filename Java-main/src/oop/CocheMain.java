@@ -19,7 +19,26 @@ public class CocheMain {
 		cocheObj.modelo = "A500";
 		System.out.println(cocheObj);
 		
+		CocheElectrico cocheElectrico = new CocheElectrico();	//Creamos el objeto de la clase CocheElectrico
 		
+		//Cambiamos los atributos
+		cocheElectrico.motorElectrico = "Motor electrico 1"; 
+		cocheElectrico.modelo = "V500";
+		cocheElectrico.fabricante = "Tesla";
+		
+		System.out.println(cocheElectrico);
+		
+		CocheElectrico cocheElectrico2 = new CocheElectrico("Azul","Tesla","AV23",234.54,350,"Motor Electrico 2");
+		cocheElectrico2.acelerar(30);
+		System.out.println(cocheElectrico2);
+		
+		
+		CocheHibrido cocheHibrido = new CocheHibrido();
+		cocheHibrido.color = "Red";
+		cocheHibrido.modelo = "Toyota";
+		cocheHibrido.motorHibrido = "Ejemplo motor hibrido";
+		
+		System.out.println(cocheHibrido);		
 	}
 
 }

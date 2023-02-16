@@ -14,6 +14,9 @@ public class Coche {
 	
 	// Constructores
 	
+	public Coche() {
+		
+	}
 	
 	//El metodo constructor recibe una serie de parámetros y tiene que tener el mismo nombre que la clase
 	public Coche(String color, String fabricante, String modelo, double peso, double largo ) { 
