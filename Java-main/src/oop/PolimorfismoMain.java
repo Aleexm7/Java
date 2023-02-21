@@ -28,6 +28,15 @@ public class PolimorfismoMain {
 		if(coche4 instanceof CocheHibrido) {
 			System.out.println("Es un coche Hibrido");
 		}
+		
+		if(coche5 instanceof CocheElectrico) {
+			System.out.println("Es un coche electrico");
+		}
+		
+		if(coche5 instanceof CocheHibrido) {
+			System.out.println("Es un coche Hibrido");
+		}
+		
 	}
 
 }
