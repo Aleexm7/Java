@@ -29,7 +29,7 @@ public class EjercicioRestaurante {
 		//Dia 1
 		int comensales1 = getComensales(0.5, 50);
 		System.out.println(comensales1);
-		int comensales2 = getComensales(2,1);
+		int comensales2 = getComensales(2,0.5);
 		System.out.println(comensales2);
 		int comensales3 = getComensales(50,0.5);
 		System.out.println(comensales3);
