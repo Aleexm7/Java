@@ -27,7 +27,7 @@ public class EjercicioRestaurante {
 	
 	public static void main(String[] args) {
 		//Dia 1
-		int comensales1 = getComensales(0.5, 50);
+		int comensales1 = getComensales(1, 0.5);
 		System.out.println(comensales1);
 		int comensales2 = getComensales(2,0.5);
 		System.out.println(comensales2);
