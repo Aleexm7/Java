@@ -42,16 +42,24 @@ public class Persona {
 		generarDNI();
 	}
 
-	private int CalculaIMC() {
-		double imc = peso / Math.pow(altura, 2);
-
-		if (imc < 20) {
-			return BAJO_PESO;
-		} else if (imc <= 25) {
-			return PESO_SALUDABLE;
-		} else {
-			return SOBREPESO;
-		}
+	public int CalculaIMC() throws ImcException {
+		
+			double imc = peso / Math.pow(altura, 2);
+			
+			if (imc < 10 || imc > 50) {
+				
+				throw new ImcException("El IMC está fuera del rango");
+				
+			}else if (imc < 20) {
+				return BAJO_PESO;
+				
+			} else if (imc <= 25) {
+				return PESO_SALUDABLE;
+			}
+			else {
+				return SOBREPESO;
+			}
+			
 	}
 
 	private boolean esMayorDeEdad(int edad) {
@@ -72,14 +80,10 @@ public class Persona {
 		}
 	}
 
-	private char caracterAleatorio() {
-		final String LETRA = "TRWAGMYFPDXBNJZSQVHLCKE"; // Creamos una constante para generar caracteres aleatorios a
-														// partir de esa constante
-		Random random = new Random(); // Creamos el objeto random
-
-		char letraAleatoria = LETRA.charAt(random.nextInt(LETRA.length())); // Generar Caracter aleatorio
-
-		return letraAleatoria; // Devolver caracter para implementarlo en dni
+	private static char calcularLetra(int dni) {
+		String caracteres = "TRWAGMYFPDXBNJZSQVHLCKE";
+		int resto = dni % 23;
+		return caracteres.charAt(resto);
 	}
 
 	private void generarDNI() {
@@ -87,9 +91,9 @@ public class Persona {
 		Random random = new Random();
 		int numeroAleatorio = random.nextInt(99999999) + 10000000; // Generar numero aleatorio de 8 digitos
 
-		dni = Integer.toString(numeroAleatorio) + caracterAleatorio();
-	}
+		dni = Integer.toString(numeroAleatorio) + calcularLetra(numeroAleatorio);
 
+	}
 
 	@Override
 	public String toString() {
@@ -105,17 +109,24 @@ public class Persona {
 		Persona persona3 = new Persona("Paula", 29, "M", 60.79, 1.67);
 
 		System.out.println(persona1);
-		System.out.println(persona1.CalculaIMC());
+		
 		System.out.println(persona1.esMayorDeEdad(33));
 
 		System.out.println(persona2);
-		System.out.println(persona2.CalculaIMC());
+		
 		System.out.println(persona2.esMayorDeEdad(10));
 
 		System.out.println(persona3);
-		System.out.println(persona3.CalculaIMC());
+		
 		System.out.println(persona3.esMayorDeEdad(29));
 
+		try {
+			int imc = persona1.CalculaIMC();
+			System.out.println("El IMC de la persona es" + imc);
+		}catch (ImcException e) {
+			System.out.println("Error" + e.getMessage());
+		}
+		
 	}
 
 	public String getNombre() {
@@ -166,8 +177,4 @@ public class Persona {
 		this.dni = dni;
 	}
 
-	
-	
-	
-	
 }
