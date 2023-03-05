@@ -21,7 +21,7 @@ public class EmpleadoCRUDMySQL implements EmpleadoCRUD {
 
 	@Override
 
-	public void borrar(Empleado empleado) {
+	public void delete(Empleado empleado) {
 
 	}
 }
