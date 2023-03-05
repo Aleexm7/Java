@@ -1,4 +1,5 @@
-package oop.interfaces;
+package oop.sininterfaces;
+
 
 public class Empleado {
 
