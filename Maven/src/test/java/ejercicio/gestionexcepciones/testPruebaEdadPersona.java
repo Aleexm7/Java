@@ -6,12 +6,11 @@ import org.junit.jupiter.api.BeforeEach;
 
 public class testPruebaEdadPersona  {
 	
-	PruebaEdadPersonas persona1; 
 
 	@BeforeEach
 	
 	
-	public void generarPersona() {
+	public void test1() {
 		
 
 		
@@ -22,7 +21,7 @@ public class testPruebaEdadPersona  {
             int edad = aleatorio.nextInt(100) + 1;
             
             try {
-            	persona1 = new PruebaEdadPersonas();
+            PruebaEdadPersonas	persona1 = new PruebaEdadPersonas();
             	
                 persona1.generaExcepcionEdad(edad);
                 
@@ -32,6 +31,30 @@ public class testPruebaEdadPersona  {
                 System.out.println("Se ha producido una excepción de AdultoException para la edad "+ " " + edad);
             } catch (MayorException e) {
                 System.out.println("Se ha producido una excepción de MayorException para la edad "+ " " + edad);
+           
+        }
+	}
+	
+}
+	@BeforeEach
+	public void Test2() {
+		
+		PruebaEdadPersonas persona2 = new PruebaEdadPersonas();
+		
+		Random aleatorio = new Random();
+		
+        for (int i = 0; i < 100; i++) {
+        	
+            int edad = aleatorio.nextInt(100) + 1;
+            
+            try {
+            	
+            	persona2.generaExcepcionEdad(edad);
+            	
+                
+            } catch (Exception e) {
+                System.out.println("Una excepcion ha sido capturada");
+                System.out.println(e.getMessage());
            
         }
 	}
