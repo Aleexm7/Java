@@ -10,7 +10,7 @@ public class testProcesarCaracter {
 	        LeerPorTeclado leerPorTeclado = new LeerPorTeclado();
 	        ProcesarCaracter procesarCaracter = new ProcesarCaracter(leerPorTeclado);
 
-	       
+	      
 
 	
 		}
